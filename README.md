@@ -1,5 +1,6 @@
-# Entrega1_Donadio_Romero_Fernandez
-Primera entrega de trabajo final
+# PROYECTO FINAL Donadio Romero Fernandez
+
+BLOG GASTRONOMICO
 
 Buenas:
 
