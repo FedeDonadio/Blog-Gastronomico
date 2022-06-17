@@ -1,0 +1,23 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Resultados de la busqueda {{varietal}}: </h1>
+
+{% if info %}
+
+<ul>
+{% for i in info %}
+
+    <li>Varietal: {{ i.varietal }}</li>
+    <li>Origen: {{ i.origen }}</li>
+    <li>Año: {{ i.fecha}}</li>
+    <li>Temperatura Cº :{{ i.temperatura }}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}

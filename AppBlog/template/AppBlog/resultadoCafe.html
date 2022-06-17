@@ -1,0 +1,25 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Resultados de la busqueda {{variedad}}: </h1>
+
+{% if info %}
+
+<ul>
+{% for i in info %}
+<li>Variedad: {{i.variedad}}</li>
+<li>Filtrado: {{i.filtrado}}</li>
+<li>Barista: {{i.barista}}</li>
+<li>Origen: {{i.origen}}</li>
+<p></p>
+<p>---------------------------------</p>
+<p></p>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}
+

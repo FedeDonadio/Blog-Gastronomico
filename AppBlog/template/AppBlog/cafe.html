@@ -1,0 +1,11 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Buscar Cafe</h1>
+
+<form action="/AppBlog/buscarCafe" method="GET">
+    <input type="text" name="variedad" id="variedad">
+    <input type="submit", value="Buscar">
+
+</form>
+{% endblock %}
