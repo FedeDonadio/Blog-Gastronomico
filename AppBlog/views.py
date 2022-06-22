@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.template import loader
 from AppBlog.models import Vino, Quesos, Platos, Postres, Cafe
 from AppBlog.forms import VinoFormulario, QuesosFormulario, PlatosFormulario, PostresFormulario, CafeFormulario
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 def inicio(request):
@@ -178,6 +182,27 @@ def buscarQuesos(request):
     return HttpResponse(respuesta)
 
 
+class PlatosList(ListView):
+    model = Platos
+    template_name = "AppBlog/platos_list.html"
+
+class PlatosDetalle(DetailView):
+    model = Platos
+    template_name = "AppBlog/platos_detalle.html"
+
+class PlatosCreacion(CreateView):
+    model = Platos
+    success_url = "/AppBlog/platos/list"
+    fields = ['nombre','pais','fecha','cocinero','receta']
+
+class PlatosUpdate(UpdateView):
+    model = Platos
+    succes_url = "/AppBlog/platos/list"
+    fields = ['nombre','pais','fecha','cocinero','receta']
+
+class PlatosDelete(DeleteView):
+    model = Platos
+    succes_url = "/AppBlog/platos/list"
 
 
 

@@ -1,4 +1,7 @@
+#from dataclasses import fields
+#from msilib.schema import ListView
 from django.db import models
+
 
 # Create your models here.
 class Platos(models.Model):

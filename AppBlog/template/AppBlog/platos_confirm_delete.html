@@ -1,0 +1,12 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Borrar Platos</h1>
+  
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar el plato "{{ object }}"?
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
