@@ -11,6 +11,9 @@ class Platos(models.Model):
     cocinero = models.CharField(max_length=40)
     receta = models.TextField()
 
+    def __str__(self):
+        return f"nombre: {self.nombre} - pais: {self.pais} - fecha: {self.fecha} - cocinero: {self.cocinero} - receta: {self.receta}"
+
 class Postres(models.Model):
     nombre = models.CharField(max_length=40)
     pais = models.CharField(max_length=40)
