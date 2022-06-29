@@ -20,7 +20,7 @@ def cafe(request):
     return render(request, 'AppBlog/cafe.html',{'fondo':'15480.jpg'})
 
 def platos(request):
-    return render(request, 'AppBlog/platos.html',{'fondo':'comida-arabe.jpg'})
+    return render(request, 'AppBlog/platos.html',{'fondo':'hamburguesa.jpg'})
 
 def postres(request):
     return render(request, 'AppBlog/postres.html',{'fondo':'cupcakes.jpg'})
@@ -86,18 +86,17 @@ def platosFormulario(request):
         if formulario.is_valid():
             informacion = formulario.cleaned_data
         nombre = informacion['nombre']
-        pais = informacion['pais']
         fecha = informacion['fecha']
         cocinero = informacion['cocinero']
         receta = informacion['receta']
-        platos = Platos(nombre=nombre , pais=pais , fecha=fecha , cocinero=cocinero, receta=receta)
+        platos = Platos(nombre=nombre, fecha=fecha, cocinero=cocinero, receta=receta)
         platos.save()
         
         return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
     else:
         formulario = PlatosFormulario()
         
-    return render(request, "AppBlog/platosFormulario.html", {"formulario":formulario, 'fondo':'comida-arabe.jpg'})
+    return render(request, "AppBlog/platosFormulario.html", {"formulario":formulario, 'fondo':'especias.jpg'})
 
 
 def postresFormulario(request):
@@ -163,7 +162,7 @@ def buscarPlatos(request):
     if request.GET['nombre']:
         nombre = request.GET['nombre']
         info = Platos.objects.filter(nombre__icontains=nombre)
-        return render(request, "AppBlog/resultadoPlatos.html", {'nombre':nombre, 'info':info, 'fondo':'comida-arabe.jpg'})
+        return render(request, "AppBlog/resultadoPlatos.html", {'nombre':nombre, 'info':info, 'fondo':'especias.jpg'})
     else:
         respuesta = "No hay datos"
 
@@ -206,7 +205,6 @@ def buscarQuesos(request):
 ###############################################################################################################################
 
 
-
 ############################                   CRUD CON VIEWLIST              #################################################
 ###############################################################################################################################   
 
@@ -221,12 +219,12 @@ class PlatosDetalle(DetailView):
 class PlatosCreacion(CreateView):
     model = Platos
     success_url = "/AppBlog/platos/list"
-    fields = ['nombre','pais','fecha','cocinero','receta']
+    fields = ['nombre','fecha','cocinero','receta']
 
 class PlatosUpdate(UpdateView):
     model = Platos
     succes_url = "/AppBlog/platos/list"
-    fields = ['nombre','pais','fecha','cocinero','receta']
+    fields = ['nombre','fecha','cocinero','receta']
 
 class PlatosDelete(DeleteView):
     model = Platos
