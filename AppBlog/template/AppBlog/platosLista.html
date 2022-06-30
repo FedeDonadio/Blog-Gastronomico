@@ -38,13 +38,14 @@
 
         <li>{{ platos.nombre}}
             <p>
-                <a href="{% url 'Detail' platos.id %}">Ver</a>
-                <a href="{% url 'Edit' platos.id %}">Editar</a>
-                <a href="{% url 'Delete' platos.id %}">Borrar</a>
+                <a href="{% url 'platosDetalle' platos.id %}">Ver</a>
+                <a href="{% url 'platosEditar' platos.id %}">Editar</a>
+                <a href="{% url 'platosBorrar' platos.id %}">Borrar</a>
             </p>
         </li>
 
         {% endfor %}
+        <a href="{% url 'platosNuevo' %}">Nuevo plato</a>
         <a href="{% url 'platos' %}">Regresar</a>
         
         <!-- Footer-->

@@ -210,22 +210,22 @@ def buscarQuesos(request):
 
 class PlatosList(ListView):
     model = Platos
-    template_name = "AppBlog/platos_list.html"
+    template_name = "AppBlog/platosLista.html"
 
 class PlatosDetalle(DetailView):
     model = Platos
-    template_name = "AppBlog/platos_detalle.html"
+    template_name = "AppBlog/platosDetalle.html"
 
 class PlatosCreacion(CreateView):
     model = Platos
-    success_url = "/AppBlog/platos/list"
+    success_url = reverse_lazy("platosLista")
     fields = ['nombre','fecha','cocinero','receta']
 
 class PlatosUpdate(UpdateView):
     model = Platos
-    succes_url = "/AppBlog/platos/list"
+    success_url = reverse_lazy("platosLista")
     fields = ['nombre','fecha','cocinero','receta']
 
 class PlatosDelete(DeleteView):
     model = Platos
-    succes_url = "/AppBlog/platos/list"
+    success_url = reverse_lazy("platosLista")

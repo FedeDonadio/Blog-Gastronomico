@@ -5,13 +5,9 @@
 
 <h1>Curso Formulario</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{from.as_p}}
-        <input type="submit" value="Enviar"/>
-    </form>
-
-
-
+<form method="post">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar"/>
+</form>
 
 {% endblock %}
