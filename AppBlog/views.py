@@ -14,7 +14,7 @@ from django.urls import reverse_lazy
 ##############################################################################################################################
 
 def inicio(request):
-    return render(request, 'AppBlog/inicio.html',{'fondo':'inicio-blog.jpg'})
+    return render(request, 'AppBlog/inicio.html',{'fondo':'inicio2-blog.jpg'})
 
 def cafe(request):
     return render(request, 'AppBlog/cafe.html',{'fondo':'15480.jpg'})

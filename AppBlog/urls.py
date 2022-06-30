@@ -1,4 +1,3 @@
-
 from django.urls import path
 from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscarVinos, vinosFormulario, platosFormulario, postresFormulario, quesosFormulario, cafeFormulario, buscarCafe, buscarPlatos, buscarPostres,buscarQuesos
 from AppBlog.views import *
@@ -25,12 +24,4 @@ urlpatterns = [
     path('platos/nuevo/', PlatosCreacion.as_view(), name='platosNuevo'),
     path('platos/editar/<pk>', PlatosUpdate.as_view(), name='platosEditar'),
     path('platos/borrar/<pk>', PlatosDelete.as_view(), name='platosBorrar'),
-
-
-
-
-    #path(r'^(?P<pk>\d+)$', PlatosDetalle.as_view(), name='Detail'),
-    #path(r'^nuevo$',PlatosCreacion.as_view(), name='New'),
-    #path(r'^editar/(?P<pk>\d+)$', PlatosUpdate.as_view(), name='Edit'),
-    #path(r'^borrar/(?P<pk>\d+)$', PlatosDelete.as_view(), name='Delete'),
 ]
