@@ -1,0 +1,20 @@
+{% extends "AppBlog/padre_platos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Lista de platos</h1>
+        <p> </p>
+
+        {% for platos in object_list %}
+
+        <li>{{ platos.nombre}}
+            <p>
+                <a href="{% url 'platosDetalle' platos.id %}">Ver</a>
+                <a href="{% url 'platosEditar' platos.id %}">Editar</a>
+                <a href="{% url 'platosBorrar' platos.id %}">Borrar</a>
+            </p>
+        </li>
+
+        {% endfor %}
+        <a href="{% url 'platosNuevo' %}">Nuevo plato</a>
+        <a href="{% url 'platos' %}">Regresar</a>
+{% endblock %}
