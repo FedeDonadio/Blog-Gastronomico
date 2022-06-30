@@ -9,21 +9,14 @@
 <ul>
 {% for i in info %}
 
-<li>Nombre: {{i.nombre}}</li>
-<li>Pais: {{i.pais}}</li> 
+<li>Nombre: {{i.nombre}}</li> 
 <li>Fecha: {{i.fecha}}</li>
 <li>Cocinero: {{i.cocinero}}</li>
-<<<<<<< HEAD
 <li>Receta: {{i.receta}}</li>
-<p></p>
-<p>---------------------------------</p>
-<p></p>
-=======
->>>>>>> parent of 35ea98a (Se elimino template sobrante, se agrego la opcion de busqueda en blanco que muestre todos los elementos de la base de datos para todos los modelos)
 {% endfor %}
 
 </ul>
-
 {% endif %}
-
+<br>
+<a href="{% url 'platos' %}">Regresar</a>
 {% endblock %}

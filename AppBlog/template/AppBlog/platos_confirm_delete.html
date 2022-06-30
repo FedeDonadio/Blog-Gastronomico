@@ -1,4 +1,4 @@
-{% extends "AppBlog/padre.html" %}
+{% extends "AppBlog/padre_platos.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
 
@@ -8,5 +8,6 @@
         ¿Estas seguro que deseas borrar el plato "{{ object }}"?
         <input type="submit" value="Si" />
     </form>
-
+<br>
+<a href="{% url 'platosLista' %}">Regresar</a>
 {% endblock %}
