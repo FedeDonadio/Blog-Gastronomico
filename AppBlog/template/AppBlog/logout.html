@@ -7,8 +7,12 @@
     <title>LOGOUT</title>
 </head>
 <body>
-
-    <h1>Te has deslogueado!</h1>
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas desloguearte??
+        <input type="submit" value="Si" />
+    </form>
+    <br>
+    <a href="{% url 'inicio' %}">Regresar</a>
     
 </body>
 </html>

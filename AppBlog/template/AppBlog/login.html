@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
 </head>
-<body>
-
+<center><br><body background="/static/AppBlog/assets/img/{{fondo}}">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <form action="" method="POST">{% csrf_token %}
 
         {{form.as_p}}
         <button type="submit">Iniciar Sesion</button>
 
     </form>
-    
-</body>
+<br>
+<p>Para registrarse has click aqui:<a href="{% url 'Register' %}">Registrarse</a></p>
+<br>
+<input type="button" onclick="history.back()" name="Regresar" value="Regresar">
+
+</body></center>
 </html>

@@ -2,7 +2,6 @@ from atexit import register
 from django.urls import path
 from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscarVinos, vinosFormulario, platosFormulario, postresFormulario, quesosFormulario, cafeFormulario, buscarCafe, buscarPlatos, buscarPostres,buscarQuesos
 from AppBlog.views import *
-from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', inicio, name='inicio'),
@@ -28,5 +27,5 @@ urlpatterns = [
     path('platos/borrar/<pk>', PlatosDelete.as_view(), name='platosBorrar'),
     path('login',login_request, name='Login'),
     path('register', register_request, name='Register'),
-    path('logout',LogoutView.as_view(template_name='AppBlog/logout.html'), name='logout'),
+    path('logout',logout_request, name='Logout'),
 ]

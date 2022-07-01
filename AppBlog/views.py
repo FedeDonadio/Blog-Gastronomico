@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 # Create your views here.
 
 
@@ -28,15 +28,15 @@ def login_request(request):
 
             if user is not None:
                 login(request, user)
-                return render(request,"AppBlog/loginConfirmado.html", {"mensaje":f"Bienvenido {usuario}"})
+                return render(request,"AppBlog/inicio.html", {'fondo':'inicio2-blog.jpg',"mensaje":f"Bienvenido {usuario}"})
             
             else:
-                return render(request,"AppBlog/loginConfirmado.html", {"mensaje":"Error, datos incorrectos"}) 
+                return render(request,"AppBlog/inicio.html", {'fondo':'inicio2-blog.jpg',"mensaje":"Error, datos incorrectos"}) 
         
         else:
-            return render(request,"AppBlog/loginConfirmado.html", {"mensaje":"Error, formulario erroneo"})
+            return render(request,"AppBlog/inicio.html", {'fondo':'inicio2-blog.jpg',"mensaje":"Error, formulario erroneo"})
     form = AuthenticationForm()
-    return render(request, "AppBlog/login.html",{'form':form})
+    return render(request, "AppBlog/login.html",{'form':form, 'fondo':'login1.jpg'})
 
 
 def register_request(request):
@@ -46,11 +46,17 @@ def register_request(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             form.save()
-            return render(request,'AppBlog/loginConfirmado.html', {"mensaje":"Usuario Creado!"})
+            return render(request,'AppBlog/inicio.html', {'fondo':'inicio2-blog.jpg',"mensaje":"Usuario Creado!"})
     
     else:
         form = UserRegisterForm()
     return render(request, 'AppBlog/register.html', {"form":form})
+
+def logout_request(request):
+    if request.method == 'POST':
+        logout(request)
+        return render(request, 'AppBlog/inicio.html',{'fondo':'inicio2-blog.jpg', 'mensaje':'Te has deslogueado!'})
+    return render(request, 'AppBlog/logout.html')
 
 
 
