@@ -1,3 +1,4 @@
+from atexit import register
 from django.urls import path
 from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscarVinos, vinosFormulario, platosFormulario, postresFormulario, quesosFormulario, cafeFormulario, buscarCafe, buscarPlatos, buscarPostres,buscarQuesos
 from AppBlog.views import *
@@ -24,4 +25,7 @@ urlpatterns = [
     path('platos/nuevo/', PlatosCreacion.as_view(), name='platosNuevo'),
     path('platos/editar/<pk>', PlatosUpdate.as_view(), name='platosEditar'),
     path('platos/borrar/<pk>', PlatosDelete.as_view(), name='platosBorrar'),
+    path('login',login_request, name='Login'),
+    path('register', register_request, name='Register'),
+    path('logout',logout_request, name='Logout'),
 ]

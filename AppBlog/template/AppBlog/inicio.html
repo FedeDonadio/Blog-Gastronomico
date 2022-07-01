@@ -1,5 +1,21 @@
 {% extends "AppBlog/padre.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<h1>Este es el inicio</h1>
+{% if not mensaje %}
+<h2>Bienvenido!</h2>
+<p>En este blog dedicado a la gastronomia usted podrá consultar:
+<br>Recetas para los mejores platos elaborados por la gente de la comunidad.
+<br>Diferentes postres de todo tipo para acompañar esos platos deliciosos.
+<br>La variedad de vinos con sus caracteristicas para una buena eleccion de acompañamiento de comidas.
+<br>Informacion sobre la increible variedad de quesos que existen en el mundo.
+<br>La variedad de cafe para una eleccion de acompañamiento de postres segun el comensal.</p>
+<p>Para poder agregar elementos en cualquiera de nuestras secciones deberá iniciar sesion
+<br>Si aun no tiene usuario puede crearlo haciendo click en el siguiente enlace:</p>
+<br>
+<a href="{% url 'Register' %}">REGISTRARSE</a>
+
+{% else %}
+{{mensaje}}
+{% endif %}
+
 {% endblock %}
