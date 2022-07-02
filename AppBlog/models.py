@@ -19,11 +19,18 @@ class Postres(models.Model):
     fecha = models.DateField()
     pastelero = models.CharField(max_length=40)
 
+    def __str__(self):
+        return f"nombre: {self.nombre} - pais: {self.pais} - fecha: {self.fecha} - pastelero: {self.pastelero}"
+
 class Cafe(models.Model):
     variedad = models.CharField(max_length=40)
     filtrado = models.CharField(max_length=40)
     barista = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
+
+    def __str__(self):
+        return f"variedad:{self.variedad} - filtrado:{self.filtrado} - barista: {self.barista} - origen:{self.origen}"
+    
 
 class Vino(models.Model):
     varietal = models.CharField(max_length=40)
@@ -31,8 +38,16 @@ class Vino(models.Model):
     fecha = models.DateField()
     temperatura = models.IntegerField()
 
+    def __str__(self):
+        return f"variedad:{self.varietal} - origen:{self.origen} - fecha:{self.fecha} - temperatura:{self.temperatura}"
+    
+
 class Quesos(models.Model):
     nombre = models.CharField(max_length=40)
     tipo = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
     pasteurizado = models.BooleanField()
+
+    def __str__(self):
+        return f"nombre:{self.nombre} - tipo:{self.tipo} - origen:{self.origen} - pasteurizado:{self.pasteurizado} "
+    
