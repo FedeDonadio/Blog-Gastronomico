@@ -1,0 +1,19 @@
+{% extends "AppBlog/padre_quesos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+<h1>Detalle los quesos</h1>
+
+    <p>Nombre: <i>{{quesos.nombre}}</i></p>
+    <p>Tipo: <i>{{quesos.tipo}}</i></p>
+    <p>Origen: <i>{{quesos.origen}}</i></p>
+    <p>Pasteurizado: <i>{{vino.pasteurizado}}</i></p>
+        
+    <a href="{% url 'quesosLista' %}">Regresar</a>
+    </p>
+
+
+{% endblock %}  
+
+

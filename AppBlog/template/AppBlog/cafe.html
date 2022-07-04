@@ -1,11 +1,20 @@
 {% extends "AppBlog/padre.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<h1>Buscar Cafe</h1>
 
-<form action="/AppBlog/buscarCafe" method="GET">
-    <input type="text" name="variedad" id="variedad">
+<p>
+   
+</p>
+
+<h>Buscar Cafe</h>
+
+<form action="/AppBlog/cafeVinos" method="GET">
+    <input type="text" name="nombre" id="nombre">
     <input type="submit", value="Buscar">
-
 </form>
+
+<p> 
+    Si desea ver los tipo de Cafés:
+</p>
+<a href="{% url 'cafeLista' %}">Ver todos</a>
 {% endblock %}

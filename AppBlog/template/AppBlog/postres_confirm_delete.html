@@ -1,0 +1,13 @@
+{% extends "AppBlog/padre_postres.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Borrar Postres</h1>
+  
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar el postre "{{ object }}"?
+        <input type="submit" value="Si" />
+    </form>
+<br>
+<a href="{% url 'postresLista' %}">Regresar</a>
+{% endblock %}

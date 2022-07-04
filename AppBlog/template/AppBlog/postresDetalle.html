@@ -1,0 +1,17 @@
+{% extends "AppBlog/padre_postres.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+<h1>Detalle postres</h1>
+
+    <p>Nombre de Postre: <i>{{postres.nombre}}</i></p>
+    <p>Fecha: <i>{{postres.fecha}}</i></p>
+    <p>Pais: <i>{{postres.pais}}</i></p>
+    <p>Pastelero: <i>{{postres.pastelero}}</i></p>
+    <p>
+    <a href="{% url 'postresLista' %}">Regresar</a>
+    </p>
+
+
+{% endblock %}

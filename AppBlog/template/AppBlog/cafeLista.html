@@ -1,0 +1,20 @@
+{% extends "AppBlog/padre_cafe.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Lista de Cafe</h1>
+        <p> </p>
+
+        {% for cafe in object_list %}
+
+        <li>{{ cafe.variedad}}
+            <p>
+                <a href="{% url 'cafeDetalle' cafe.id %}">Ver</a>
+                <a href="{% url 'cafeEditar' cafe.id %}">Editar</a>
+                <a href="{% url 'cafeBorrar' cafe.id %}">Borrar</a>
+            </p>
+        </li>
+
+        {% endfor %}
+        <a href="{% url 'cafeNuevo' %}">Nuevo cafe</a>
+        <a href="{% url 'cafe' %}">Regresar</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "AppBlog/padre_quesos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Lista de Quesos</h1>
+        <p> </p>
+
+        {% for quesos in object_list %}
+
+        <li>{{ quesos.nombre}}
+            <p>
+                <a href="{% url 'quesosDetalle' quesos.id %}">Ver</a>
+                <a href="{% url 'quesosEditar' quesos.id %}">Editar</a>
+                <a href="{% url 'quesosBorrar' quesos.id %}">Borrar</a>
+            </p>
+        </li>
+
+        {% endfor %}
+        <a href="{% url 'quesosNuevo' %}">Nuevo queso</a>
+        <a href="{% url 'quesos' %}">Regresar</a>
+{% endblock %}

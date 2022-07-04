@@ -1,0 +1,20 @@
+{% extends "AppBlog/padre_vinos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Lista de Vinos</h1>
+        <p> </p>
+
+        {% for vinos in object_list %}
+
+        <li>{{ vinos.varietal}}
+            <p>
+                <a href="{% url 'vinosDetalle' vinos.id %}">Ver</a>
+                <a href="{% url 'vinosEditar' vinos.id %}">Editar</a>
+                <a href="{% url 'vinosBorrar' vinos.id %}">Borrar</a>
+            </p>
+        </li>
+
+        {% endfor %}
+        <a href="{% url 'vinosNuevo' %}">Nuevo vino</a>
+        <a href="{% url 'vinos' %}">Regresar</a>
+{% endblock %}

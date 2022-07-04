@@ -2,12 +2,19 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
+<p>
+   
+</p>
 
-<h1>Buscar Vinos</h1>
+<h>Buscar vinos</h>
 
 <form action="/AppBlog/buscarVinos" method="GET">
-    <input type="text" name="varietal" id="varietal">
+    <input type="text" name="nombre" id="nombre">
     <input type="submit", value="Buscar">
-
 </form>
+
+<p> 
+    Si desea ver todos los vinos de la pagina presione aqui:
+</p>
+<a href="{% url 'vinosLista' %}">Ver todos</a>
 {% endblock %}

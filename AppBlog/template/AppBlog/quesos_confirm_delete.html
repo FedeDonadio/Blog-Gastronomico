@@ -1,0 +1,13 @@
+{% extends "AppBlog/padre_quesos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Borrar Quesos</h1>
+  
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar el queso "{{ object }}"?
+        <input type="submit" value="Si" />
+    </form>
+<br>
+<a href="{% url 'quesosLista' %}">Regresar</a>
+{% endblock %}

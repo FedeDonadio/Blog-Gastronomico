@@ -1,12 +1,20 @@
 {% extends "AppBlog/padre.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<h1>Buscar Quesos</h1>
+
+<p>
+   
+</p>
+
+<h>Buscar Quesos</h>
 
 <form action="/AppBlog/buscarQuesos" method="GET">
     <input type="text" name="nombre" id="nombre">
     <input type="submit", value="Buscar">
-
 </form>
 
+<p> 
+    Si desea ver todos los quesos de la pagina presione aqui:
+</p>
+<a href="{% url 'quesosLista' %}">Ver todos</a>
 {% endblock %}

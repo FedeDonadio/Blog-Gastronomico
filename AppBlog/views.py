@@ -8,7 +8,11 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import login, authenticate, logout 
+from django.contrib.auth.mixins import LoginRequiredMixin 
+
+
+
 # Create your views here.
 
 
@@ -91,6 +95,8 @@ def vinos(request):
 
 ###########################             FORMULARIOS                                ############################################
 ###############################################################################################################################         
+
+
 
 def vinosFormulario(request):
     
@@ -257,6 +263,8 @@ def buscarQuesos(request):
 
 ############################                   CRUD CON VIEWLIST              #################################################
 ###############################################################################################################################   
+    
+#Platos
 
 class PlatosList(ListView):
     model = Platos
@@ -266,16 +274,121 @@ class PlatosDetalle(DetailView):
     model = Platos
     template_name = "AppBlog/platosDetalle.html"
 
-class PlatosCreacion(CreateView):
+class PlatosCreacion(LoginRequiredMixin, CreateView):
     model = Platos
     success_url = reverse_lazy("platosLista")
     fields = ['nombre','fecha','cocinero','receta']
 
-class PlatosUpdate(UpdateView):
+class PlatosUpdate(LoginRequiredMixin, UpdateView):
     model = Platos
     success_url = reverse_lazy("platosLista")
     fields = ['nombre','fecha','cocinero','receta']
 
-class PlatosDelete(DeleteView):
+class PlatosDelete(LoginRequiredMixin, DeleteView):
     model = Platos
-    success_url = reverse_lazy("platosLista")
+    success_url = reverse_lazy("platosLista") 
+
+#Postres
+
+class PostresList(ListView):
+    model = Postres 
+    template_name = "AppBlog/postresLista.html" 
+
+class PostresDetalle(DetailView):
+    model = Postres
+    template_name = "AppBlog/postresDetalle.html"
+
+class PostresCreacion(LoginRequiredMixin, CreateView):
+    model = Postres
+    sucess_url = reverse_lazy("postres")
+    fields = ['nombre','fecha','pais','pastelero']
+
+class PostresUpdate(LoginRequiredMixin, UpdateView):
+    model = Postres
+    success_url = reverse_lazy("postresLista")
+    fields = ['nombre','fecha','pais','pastelero']
+
+class PostresDelete(LoginRequiredMixin, DeleteView):
+    model = Postres
+    success_url = reverse_lazy("postresLista")     
+
+
+#Vinos  
+
+class VinosList(ListView):
+    model = Vino
+    template_name = "AppBlog/vinosLista.html"
+
+class VinosDetalle(DetailView):
+    model = Vino
+    template_name = "AppBlog/vinosDetalle.html"
+
+class VinosCreacion(LoginRequiredMixin, CreateView):
+    model = Vino
+    success_url = reverse_lazy("vinosLista")
+    fields = ['varietal','fecha','temperatura','origen']
+
+class VinosUpdate(LoginRequiredMixin, UpdateView):
+    model = Vino
+    success_url = reverse_lazy("vinosLista")
+    fields = ['varietal','fecha','temperatura','origen']
+
+class VinosDelete(LoginRequiredMixin, DeleteView):
+    model = Vino
+    success_url = reverse_lazy("vinosLista") 
+
+
+#Quesos
+
+class QuesosList(ListView):
+    model = Quesos
+    template_name = "AppBlog/quesosLista.html"
+
+class QuesosDetalle(DetailView):
+    model = Quesos
+    template_name = "AppBlog/quesosDetalle.html"
+
+class QuesosCreacion(LoginRequiredMixin, CreateView):
+    model = Quesos
+    success_url = reverse_lazy("quesosLista")
+    fields = ['nombre','tipo','origen','pasteurizado']
+
+class QuesosUpdate(LoginRequiredMixin, UpdateView):
+    model = Quesos
+    success_url = reverse_lazy("vinosLista")
+    fields = ['nombre','tipo','origen','pasteurizado']
+
+class QuesosDelete(LoginRequiredMixin, DeleteView):
+    model = Quesos
+    success_url = reverse_lazy("quesosLista") 
+
+
+#Cafe 
+
+class CafeList(ListView):
+    model = Cafe
+    template_name = "AppBlog/cafeLista.html"
+
+class CafeDetalle(DetailView):
+    model = Cafe
+    template_name = "AppBlog/cafeDetalle.html"
+
+class CafeCreacion(LoginRequiredMixin, CreateView):
+    model = Cafe
+    success_url = reverse_lazy("cafeLista")
+    fields = ['variedad','filtrado','barista','origen']
+
+class CafeUpdate(LoginRequiredMixin, UpdateView):
+    model = Cafe
+    success_url = reverse_lazy("cafeLista")
+    fields = ['variedad','filtrado','barista','origen']
+
+class CafeDelete(LoginRequiredMixin, DeleteView):
+    model = Cafe
+    success_url = reverse_lazy("cafeLista") 
+
+
+     
+
+
+

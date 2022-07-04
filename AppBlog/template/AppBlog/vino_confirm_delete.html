@@ -1,0 +1,13 @@
+{% extends "AppBlog/padre_vinos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h1>Borrar Vinos</h1>
+  
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar el vino "{{ object }}"?
+        <input type="submit" value="Si" />
+    </form>
+<br>
+<a href="{% url 'vinosLista' %}">Regresar</a>
+{% endblock %}

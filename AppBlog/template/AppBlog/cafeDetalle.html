@@ -1,0 +1,19 @@
+{% extends "AppBlog/padre_cafe.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+<h1>Detalle cafe</h1>
+
+    <p>Variedad: <i>{{cafe.variedad}}</i></p>
+    <p>Filtrado: <i>{{cafe.filtrado}}</i></p>
+    <p>Barista: <i>{{cafe.barista}}</i></p>
+    <p>Origen: <i>{{cafe.origen}}</i></p>
+    <p>
+    <a href="{% url 'cafeLista' %}">Regresar</a>
+    </p>
+
+
+{% endblock %} 
+
+

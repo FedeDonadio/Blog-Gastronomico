@@ -1,0 +1,17 @@
+{% extends "AppBlog/padre_vinos.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+<h1>Detalle los vinos</h1>
+
+    <p>Varietal: <i>{{vino.varietal}}</i></p>
+    <p>Fecha: <i>{{vino.fecha}}</i></p>
+    <p>Temperatura: <i>{{vino.temperatura}}</i></p>
+    <p>Origen: <i>{{vino.origen}}</i></p>
+        
+    <a href="{% url 'vinosLista' %}">Regresar</a>
+    </p>
+
+
+{% endblock %}
