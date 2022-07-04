@@ -28,4 +28,6 @@ urlpatterns = [
     path('login',login_request, name='Login'),
     path('register', register_request, name='Register'),
     path('logout',logout_request, name='Logout'),
+    
 ]
+

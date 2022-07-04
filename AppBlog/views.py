@@ -1,4 +1,6 @@
-from django.shortcuts import render
+
+from django.conf import settings
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
 from AppBlog.models import Vino, Quesos, Platos, Postres, Cafe
@@ -10,6 +12,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 # Create your views here.
+
 
 
 #############################################                LOGIN            #################################################
@@ -279,3 +282,9 @@ class PlatosUpdate(UpdateView):
 class PlatosDelete(DeleteView):
     model = Platos
     success_url = reverse_lazy("platosLista")
+
+#######################################################################################################################
+###################################CAPTAR ERROR 404####################################################################
+
+def error404(request, exception):
+    return render (request, 'AppBlog/error_404.html', {'fondo':'inicio2-blog.jpg'})
