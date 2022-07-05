@@ -89,7 +89,7 @@ def vinos(request):
     return render(request, 'AppBlog/vinos.html',{'fondo':'alimentos-vino.jpg'})
 
 def acercaDeMi(request):
-    return render (request, 'AppBlog/acercaDeMi.html',{'fondo':'login1.jpg'})
+    return render (request, 'AppBlog/acercaDeMi.html',{'fondo':'banquete.jpg'})
 
 ###############################################################################################################################
 ###############################################################################################################################
@@ -397,4 +397,4 @@ class CafeDelete(LoginRequiredMixin, DeleteView):
 ###################################CAPTAR ERROR 404####################################################################
 
 def error404(request, exception):
-    return render (request, 'AppBlog/error_404.html')
+    return render (request, 'AppBlog/error_404.html',{'fondo':'inicio2-blog.jpg'})
