@@ -58,7 +58,7 @@ LOGIN_URL = 'Login'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/Fernando/Desktop/Proyecto/Blog-Gastronomico/AppBlog/template'],
+        'DIRS': ['/Users/feder/Documents/Python/CoderHouse Curso/BLOG_GASTRONOMICO/GastroBlog/AppBlog/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
