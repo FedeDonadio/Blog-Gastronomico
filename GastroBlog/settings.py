@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#6(-b&=so*+dax0@8e(00f6rgfd!4qyx3bnf08u_bm7&t1_3=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,7 +58,7 @@ LOGIN_URL = 'Login'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/feder/Documents/Python/CoderHouse Curso/BLOG_GASTRONOMICO/GastroBlog/AppBlog/template'],
+        'DIRS': ['/Users/federicofernandez/Desktop/Blog-Gastronomico/AppBlog/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

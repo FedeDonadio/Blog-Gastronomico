@@ -1,4 +1,6 @@
-from django.shortcuts import render
+
+from django.conf import settings
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
 from AppBlog.models import Vino, Quesos, Platos, Postres, Cafe
@@ -14,6 +16,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
+
 
 
 #############################################                LOGIN            #################################################
@@ -84,6 +87,9 @@ def quesos(request):
 
 def vinos(request):
     return render(request, 'AppBlog/vinos.html',{'fondo':'alimentos-vino.jpg'})
+
+def acercaDeMi(request):
+    return render (request, 'AppBlog/acercaDeMi.html',{'fondo':'login1.jpg'})
 
 ###############################################################################################################################
 ###############################################################################################################################
@@ -286,6 +292,7 @@ class PlatosUpdate(LoginRequiredMixin, UpdateView):
 
 class PlatosDelete(LoginRequiredMixin, DeleteView):
     model = Platos
+<<<<<<< HEAD
     success_url = reverse_lazy("platosLista") 
 
 #Postres
@@ -392,3 +399,12 @@ class CafeDelete(LoginRequiredMixin, DeleteView):
 
 
 
+=======
+    success_url = reverse_lazy("platosLista")
+
+#######################################################################################################################
+###################################CAPTAR ERROR 404####################################################################
+
+def error404(request, exception):
+    return render (request, 'AppBlog/error_404.html')
+>>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317

@@ -24,6 +24,7 @@ class Postres(models.Model):
     fecha = models.DateField()
     pastelero = models.CharField(max_length=40)
 
+<<<<<<< HEAD
     def get_absolute_url(self):
         return reverse("postres", kwargs={"pk": self.pk}) 
 
@@ -32,6 +33,10 @@ class Postres(models.Model):
     
 
 
+=======
+    def __str__(self):
+        return f"nombre: {self.nombre} - pais: {self.pais} - fecha: {self.fecha} - pastelero: {self.pastelero}"
+>>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317
 
 class Cafe(models.Model):
     variedad = models.CharField(max_length=40)
@@ -39,6 +44,7 @@ class Cafe(models.Model):
     barista = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
 
+<<<<<<< HEAD
     def get_absolute_url(self):
         return reverse("cafe", kwargs={"pk": self.pk}) 
 
@@ -46,6 +52,11 @@ class Cafe(models.Model):
         return f"variedad: {self.variedad} - filtrado: {self.filtrado} - barista: {self.barista} - origen: {self.origen}"    
 
 
+=======
+    def __str__(self):
+        return f"variedad:{self.variedad} - filtrado:{self.filtrado} - barista: {self.barista} - origen:{self.origen}"
+    
+>>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317
 
 class Vino(models.Model):
     varietal = models.CharField(max_length=40)
@@ -62,10 +73,15 @@ class Vino(models.Model):
 
 
 
+    def __str__(self):
+        return f"variedad:{self.varietal} - origen:{self.origen} - fecha:{self.fecha} - temperatura:{self.temperatura}"
+    
+
 class Quesos(models.Model):
     nombre = models.CharField(max_length=40)
     tipo = models.CharField(max_length=40)
     origen = models.CharField(max_length=40)
+<<<<<<< HEAD
     pasteurizado = models.BooleanField() 
 
     def get_absolute_url(self):
@@ -73,3 +89,10 @@ class Quesos(models.Model):
 
     def __str__(self):
         return f"nombre: {self.nombre} - tipo: {self.tipo} - origen: {self.origen} - pasteurizado: {self.pasteurizado}"    
+=======
+    pasteurizado = models.BooleanField()
+
+    def __str__(self):
+        return f"nombre:{self.nombre} - tipo:{self.tipo} - origen:{self.origen} - pasteurizado:{self.pasteurizado} "
+    
+>>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317
