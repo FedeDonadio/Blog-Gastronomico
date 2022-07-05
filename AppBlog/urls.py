@@ -1,6 +1,6 @@
 from atexit import register
 from django.urls import path
-from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscarVinos, vinosFormulario, platosFormulario, postresFormulario, quesosFormulario, cafeFormulario, buscarCafe, buscarPlatos, buscarPostres,buscarQuesos
+#from AppBlog.views import inicio, cafe, platos, postres, quesos, vinos, buscarVinos, vinosFormulario, platosFormulario, postresFormulario, quesosFormulario, cafeFormulario, buscarCafe, buscarPlatos, buscarPostres,buscarQuesos
 from AppBlog.views import *
 
 urlpatterns = [
@@ -10,6 +10,7 @@ urlpatterns = [
     path('postres/', postres, name='postres'),
     path('quesos/', quesos, name='quesos'),
     path('vinos/', vinos, name='vinos'),
+    path('acercaDeMi/', acercaDeMi, name='acercaDeMi'),
     path('vinosFormulario/', vinosFormulario, name='vinosFormulario'),
     path('platosFormulario/', platosFormulario, name='platosFormulario'),
     path('postresFormulario/', postresFormulario, name='postresFormulario'),
