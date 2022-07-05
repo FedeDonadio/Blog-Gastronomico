@@ -292,7 +292,6 @@ class PlatosUpdate(LoginRequiredMixin, UpdateView):
 
 class PlatosDelete(LoginRequiredMixin, DeleteView):
     model = Platos
-<<<<<<< HEAD
     success_url = reverse_lazy("platosLista") 
 
 #Postres
@@ -394,17 +393,8 @@ class CafeDelete(LoginRequiredMixin, DeleteView):
     model = Cafe
     success_url = reverse_lazy("cafeLista") 
 
-
-     
-
-
-
-=======
-    success_url = reverse_lazy("platosLista")
-
 #######################################################################################################################
 ###################################CAPTAR ERROR 404####################################################################
 
 def error404(request, exception):
     return render (request, 'AppBlog/error_404.html')
->>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317

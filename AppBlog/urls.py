@@ -29,7 +29,6 @@ urlpatterns = [
     path('login',login_request, name='Login'),
     path('register', register_request, name='Register'),
     path('logout',logout_request, name='Logout'),
-<<<<<<< HEAD
     path('postres/lista/', PostresList.as_view(), name = 'postresLista'),
     path('postres/<int:pk>',PostresDetalle.as_view(), name = 'postresDetalle'),
     path('postres/nuevo/', PostresCreacion.as_view(), name='postresNuevo'),
@@ -51,8 +50,4 @@ urlpatterns = [
     path('cafe/editar/<pk>', CafeUpdate.as_view(), name='cafeEditar'),
     path('cafe/borrar/<pk>', CafeDelete.as_view(), name='cafeBorrar'),
 ]
-=======
-    
-]
 
->>>>>>> 3ba5825c822415047ffaf83b6d2b423489240317
