@@ -23,6 +23,8 @@ Una vez descargado, se deberá modificar la ruta de acceso de los Template en el
 La nueva URL a colocar se puede obtener mediante la consola, ubicándose dentro de la carpeta de los templates y escribir “pwd”. 
 Para probar la función de captar “error 404” hay que modificar en settings: DEBUG = FALSE Y ALLOWED_HOSTS = [‘*’].
 
+Se adjunta link de muestra: https://drive.google.com/file/d/1clRUbBRFeaxGY8yxRz192jv1Vl2aLJRQ/view?usp=sharing
+
 El proyecto se encuentra en la rama "master".
 
 Muchas gracias por visualizar nuestro blog! Esperamos les sea útil y/o les guste.
